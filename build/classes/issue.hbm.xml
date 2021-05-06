@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"-http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="models.Issue" table="issue">
+
+		<id name="id">
+			<column name="id"></column>
+			<generator class="increment"></generator>
+		</id>
+		<many-to-one name="book" column="book_id" class="models.Book"></many-to-one>
+		<many-to-one name="student" column="student_id" class="models.Student"></many-to-one>
+		
+		
+		<property name="createDate">
+			<column name="create_date"></column>
+		</property>
+		<property name="createdBy">
+			<column name="creaeted_by"></column>
+		</property>
+		<property name="updateDate">
+			<column name="update_date"></column>
+		</property>
+		<property name="updatedBy">
+			<column name="update_by"></column>
+		</property>
+		<property name="status">
+			<column name="status"></column>
+		</property>
+
+		
+
+		
+
+	</class>
+
+
+</hibernate-mapping>

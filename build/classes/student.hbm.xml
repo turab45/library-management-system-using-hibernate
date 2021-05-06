@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+
+<hibernate-mapping>
+	<class name="models.Student" table="student">
+		<id name="id">
+			<generator class="increment" />
+		</id>
+		<property name="rollNo" column="roll_no"></property>
+		<property name="name" column="name"></property>
+		<property name="dateOfBirth" column="dateofbirth"></property>
+		<property name="contact"></property>
+		<property name="createDate">
+			<column name="create_date"></column>
+		</property>
+		<property name="createdBy">
+			<column name="creaeted_by"></column>
+		</property>
+		<property name="updateDate">
+			<column name="update_date"></column>
+		</property>
+		<property name="updatedBy">
+			<column name="update_by"></column>
+		</property>
+		<property name="status">
+			<column name="status"></column>
+		</property>
+
+	</class>
+
+</hibernate-mapping>  
