@@ -35,6 +35,7 @@
                             <div class="col-md-8">
                                 <h1 class="text-center" style="color: rgb(31,40,81);">Student</h1>
                                 <hr style="background-color: rgb(31,40,81);">
+                                <div class="form-group"><label style="color: rgb(31,40,81);font-size: 16px;font-weight: bold;">Roll No </label><input class="form-control" type="text" autocomplete="off" required="" name="rollNo" style="border-color: rgb(31,40,81);color: rgb(31,40,81);font-size: 14px;"></div>
                                 <div class="form-row">
                                     <div class="col-sm-12 col-md-6">
                                         <div class="form-group"><label style="color: rgb(31,40,81);font-weight: bold;font-size: 16px;">First Name </label><input class="form-control" type="text" name="firstname" style="border-color: rgb(31,40,81);color: rgb(31,40,81);font-size: 14px;"></div>
@@ -43,7 +44,7 @@
                                         <div class="form-group"><label style="color: rgb(31,40,81);font-weight: bold;font-size: 16px;">Last Name </label><input class="form-control" type="text" name="lastname" style="border-color: rgb(31,40,81);color: rgb(31,40,81);font-size: 14px;"></div>
                                     </div>
                                 </div>
-                                <div class="form-group"><label style="color: rgb(31,40,81);font-size: 16px;font-weight: bold;">Email </label><input class="form-control" type="email" autocomplete="off" required="" name="email" style="border-color: rgb(31,40,81);color: rgb(31,40,81);font-size: 14px;"></div>
+                               
                                 <div
                                     class="form-row">
                                     <div class="col-sm-12 col-md-6">

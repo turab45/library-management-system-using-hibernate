@@ -7,7 +7,7 @@ public class Issue {
 	private Book book;
 	private Student student;
 	private Date issueDate;
-	private User issuedBy;
+	private Integer issuedBy;
 	private Integer createdBy;
 	private Date createDate;
 	private Integer updatedBy;
@@ -37,10 +37,10 @@ public class Issue {
 	public void setIssueDate(Date issueDate) {
 		this.issueDate = issueDate;
 	}
-	public User getIssuedBy() {
+	public Integer getIssuedBy() {
 		return issuedBy;
 	}
-	public void setIssuedBy(User issuedBy) {
+	public void setIssuedBy(Integer issuedBy) {
 		this.issuedBy = issuedBy;
 	}
 	public int getStatus() {

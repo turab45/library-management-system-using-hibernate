@@ -142,7 +142,7 @@ try {
 
 			Transaction transaction = session.beginTransaction();
 
-			allIssue = session.createQuery("from issue").list();
+			allIssue = session.createQuery("from Issue").list();
 
 			
 			

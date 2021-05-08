@@ -49,7 +49,7 @@ System.out.println("Student size: "+allStudent.size());
                             <th style="color: rgb(31,40,81);font-size: 18px;">Name</th>
                             <th style="color: rgb(31,40,81);font-size: 18px;">Date of birth</th>
                             <th style="color: rgb(31,40,81);font-size: 18px;">Contact</th>
-                            <th style="color: rgb(31,40,81);font-size: 18px;">Email</th>
+                            
                             <th style="color: rgb(31,40,81);font-size: 18px;">Create Date</th>
                             <th style="color: rgb(31,40,81);font-size: 18px;">Created By</th>
                             <th style="color: rgb(31,40,81);font-size: 18px;">Update Date</th>
@@ -63,23 +63,22 @@ System.out.println("Student size: "+allStudent.size());
                     
                     <% 
                     
-                    	System.out.println("Created By ID: "+s.getCreatedBy().getId());
-                    	Role createdBy = roleDaoImpl.getRoleById(s.getCreatedBy().getId());
+                    	
+                    	Role createdBy = roleDaoImpl.getRoleById(s.getCreatedBy());
                     Role updatedBy = null;
                     	if(s.getUpdatedBy() != null){
-                    	updatedBy = roleDaoImpl.getRoleById(s.getUpdatedBy().getId());} %>
+                    	updatedBy = roleDaoImpl.getRoleById(s.getUpdatedBy());} %>
                         <tr>
                             <td style="color: rgb(14,16,18);"><%=s.getRollNo() %></td>
                             <td style="color: rgb(14,16,18);"><%=s.getName() %></td>
                             <td style="color: rgb(14,16,18);"><%=s.getDateOfBirth() %></td>
                             <td style="color: rgb(14,16,18);"><%=s.getContact() %></td>
-                            <td style="color: rgb(14,16,18);"><%=s.getEmail() %></td>
-                             <td style="color: rgb(14,16,18);"><%=s.getCreateDate().toString() %></td>  
-                            <td style="color: rgb(14,16,18);">--</td> 
                             
-                            <td style="color: rgb(14,16,18);">--</td>
-                          
-                            <td style="color: rgb(14,16,18);">--</td>
+                            <td style="color: rgb(14,16,18);"><%=s.getCreateDate().toString() %></td>  
+                            <td style="color: rgb(14,16,18);"><%=createdBy.getRole() %></td> 
+                            
+                            <td style="color: rgb(14,16,18);"><%=s.getUpdateDate().toString() %></td>
+                             <td style="color: rgb(14,16,18);">--</td>
                             
                              
                             

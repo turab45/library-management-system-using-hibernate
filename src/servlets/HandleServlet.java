@@ -50,6 +50,9 @@ public class HandleServlet extends HttpServlet {
 		
 		switch (action) {
 		case "login":
+			System.out.println("Email "+useremail);
+			System.out.println("Password "+pass);
+			
 			Integer id = userDaoImpl.getUserIdByEmailandPass(useremail, pass);
 
 			if (id != null) {

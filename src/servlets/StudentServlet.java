@@ -50,6 +50,7 @@ public class StudentServlet extends HttpServlet {
 		String lastname = request.getParameter("lastname");
 		String email = request.getParameter("email");
 		String contact = request.getParameter("contact");
+		String rollNo = request.getParameter("rollNo");
 		String sDate1= request.getParameter("date-of-birht");
 		
 		 Date date = null;
@@ -75,16 +76,22 @@ public class StudentServlet extends HttpServlet {
 			student.setName(firstname+" "+lastname);
 			student.setEmail(email);
 			student.setDateOfBirth(date);
+			student.setRollNo(rollNo);
 			student.setContact(contact);
+			student.setCreateDate(new Date());
+			student.setUpdateDate(new Date());
+			student.setCreatedBy(u.getRole().getId());
+			student.setUpdatedBy(u.getRole().getId());
 			
 			Role createdBy = roleDaoImpl.getRoleById(u.getRole().getId());
 			student.setCreatedBy(createdBy.getId());
 			
 			result = studentDaoImpl.addStudent(student);
 			
-			if (result > 0) {
+			System.out.println("Today date is : "+new Date());
+			
 				response.sendRedirect("view-student.jsp");
-			}
+			
 			break;
 		}
 	}

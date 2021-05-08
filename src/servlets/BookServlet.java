@@ -1,6 +1,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -64,7 +65,7 @@ public class BookServlet extends HttpServlet {
 		String author = request.getParameter("author");
 		String categoryName = request.getParameter("category");
 
-		Category category = categoryDaoImpl.getCategoryById(categoryDaoImpl.getIdByName(categoryName));
+		
 
 		String action = request.getParameter("action");
 
@@ -77,6 +78,7 @@ public class BookServlet extends HttpServlet {
 		switch (action) {
 
 		case "add":
+			Category category = categoryDaoImpl.getCategoryById(categoryDaoImpl.getIdByName(categoryName));
 			Integer noOfCopies = Integer.parseInt(request.getParameter("no-of-copies"));
 			book = new Book();
 			book.setTitle(title);
@@ -85,15 +87,18 @@ public class BookServlet extends HttpServlet {
 			book.setCategory(category);
 			book.setNoOfCopies(noOfCopies);
 			book.setCreatedBy(u.getRole().getId());
+			book.setCreateDate(new Date());
+			book.setUpdatedBy(u.getRole().getId());
+			book.setUpdateDate(new Date());
 
 			result = bookDaoImpl.addBook(book);
 			
-				response.sendRedirect("view-book.jsp");
+			response.sendRedirect("view-book.jsp");
 			
 			break;
 
 		case "update":
-
+			category = categoryDaoImpl.getCategoryById(categoryDaoImpl.getIdByName(categoryName));
 			noOfCopies = Integer.parseInt(request.getParameter("no-of-copies"));
 			id = Integer.parseInt(request.getParameter("id"));
 			book = bookDaoImpl.getBookById(id);
@@ -136,13 +141,16 @@ public class BookServlet extends HttpServlet {
 				Integer bookId = Integer.parseInt(selectedStudentIds[i]);
 
 				Book book2 = bookDaoImpl.getBookById(bookId);
-				Role createdBy = roleDaoImpl.getRoleById(u.getRole().getId());
+				
 
 				Issue issue = new Issue();
 				issue.setBook(book2);
 				issue.setStudent(student);
-				issue.setCreatedBy(createdBy.getId());
-				issue.setIssuedBy(u);
+				issue.setCreatedBy(u.getRole().getId());
+				issue.setIssuedBy(u.getId());
+				issue.setCreateDate(new Date());
+				issue.setUpdateDate(new Date());
+				issue.setUpdatedBy(u.getRole().getId());
 
 				result = issueDaoImpl.addIssue(issue);
 

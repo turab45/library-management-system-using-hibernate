@@ -11,6 +11,7 @@
 			<column name="id"></column>
 			<generator class="increment"></generator>
 		</id>
+		<many-to-one name="issue" column="issued_by" class="models.Issue"></many-to-one>
 		<many-to-one name="book" column="book_id" class="models.Book"></many-to-one>
 		<many-to-one name="student" column="student_id" class="models.Student"></many-to-one>
 		

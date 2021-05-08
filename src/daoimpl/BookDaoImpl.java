@@ -174,7 +174,7 @@ public class BookDaoImpl implements BookDao{
 
 			Transaction transaction = session.beginTransaction();
 
-			allBook = session.createQuery("from book").list();
+			allBook = session.createQuery("from Book").list();
 
 			
 			

@@ -171,7 +171,10 @@ public class UserDaoImpl implements UserDAO{
 			e.printStackTrace();
 			System.out.println("Error : " + e.getMessage());
 		}
-		return user.getId();
+		if (user != null) {
+			return user.getId();
+		}
+		return null;
 	}
 
 	@Override
@@ -185,7 +188,7 @@ public class UserDaoImpl implements UserDAO{
 
 			Transaction transaction = session.beginTransaction();
 
-			allUser = session.createQuery("from user").list();
+			allUser = session.createQuery("from User").list();
 
 			
 			
