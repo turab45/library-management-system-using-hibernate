@@ -43,10 +43,7 @@
                         <tr>
                             <th style="color: rgb(31,40,81);font-size: 15px;font-family: Lora, serif;">ID</th>
                             <th style="color: rgb(31,40,81);font-size: 15px;">Category</th>
-                            <th style="color: rgb(31,40,81);font-size: 15px;">Create Date</th>
-                            <th style="color: rgb(31,40,81);font-size: 15px;">Created By</th>
-                            <th style="color: rgb(31,40,81);font-size: 15px;">Update Date</th>
-                            <th style="color: rgb(31,40,81);font-size: 15px;">Updated By</th>
+                            
                             <th class="text-center" colspan="2" style="color: rgb(31,40,81);font-size: 18px;">Actions</th>
                         </tr>
                     </thead>
@@ -55,16 +52,13 @@
                     <%for (Category c : allCategory){ 
                     	
                     	
-                    	Role createdBy = roleDaoImpl.getRoleById(c.getCreatedBy().getId());
-                    	Role updatedBy = roleDaoImpl.getRoleById(c.getUpdatedBy().getId());
+                    	Role createdBy = roleDaoImpl.getRoleById(c.getCreatedBy());
+                    	Role updatedBy = roleDaoImpl.getRoleById(c.getUpdatedBy());
                     %>
                         <tr>
                             <td style="color: rgb(14,16,18);"><%=c.getId() %></td>
                             <td style="color: rgb(14,16,18);"><%=c.getCategory() %></td>
-                            <td style="color: rgb(14,16,18);"><%=c.getCreateDate() %></td>
-                            <td style="color: rgb(14,16,18);"><%=createdBy.getRole() %></td>
-                            <td style="color: rgb(14,16,18);"><%=c.getUpdateDate() %></td>
-                            <td style="color: rgb(14,16,18);">--</td>
+                            
                             <td style="width: 36px;"><a href="edit-category.jsp?id=<%=c.getId() %>" style="text-decoration: none;font-weight: bold;"><i class="fas fa-edit"></i></a></td>
                             <td style="width: 36px;height: 49px;"><a href="Category?id=<%=c.getId() %>&&action=<%="delete" %>" style="/*text-decoration: none;*//*background-color: red;*//*color: rgb(221,16,16);*//*border: 1px solid;*//*border-radius: 5px;*//*width: 12px;*//*height: 20px;*/color: red;font-weight: bold;"></a><a href="Category?id=<%=c.getId() %>&&action=<%="delete" %>" style="text-decoration: none;font-weight: bold;"><i class="material-icons" style="width: 11;height: 13;color: rgb(255,19,34);">delete</i></a></td>
                         </tr>

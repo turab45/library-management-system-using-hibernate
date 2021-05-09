@@ -151,6 +151,7 @@ public class BookServlet extends HttpServlet {
 				issue.setCreateDate(new Date());
 				issue.setUpdateDate(new Date());
 				issue.setUpdatedBy(u.getRole().getId());
+				issue.setStatus(1);
 
 				result = issueDaoImpl.addIssue(issue);
 

@@ -43,9 +43,9 @@ public class IssueServlet extends HttpServlet {
 			
 			result = issueDaoImpl.returnBook(issue);
 			
-			if (result > 0) {
+			
 				response.sendRedirect("view-issued-book.jsp");
-			}
+			
 			break;
 
 		default:

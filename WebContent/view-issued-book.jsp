@@ -66,7 +66,7 @@
                     <%for(Issue issue: allIssuedBooks){
                     	Book book = bookDaoImpl.getBookById(issue.getBook().getId());
                     	Student student = studentDaoImpl.getStudentById(issue.getStudent().getId() );
-                    	User u = userDaoImpl.getUserById(issue.getIssuedBy().getId());
+                    	User u = userDaoImpl.getUserById(issue.getIssuedBy());
                     	
                     	%>
                     

@@ -83,7 +83,7 @@ System.out.println("Student size: "+allStudent.size());
                              
                             
                             
-                            <td style="width: 36px;"><a href="#" style="text-decoration: none;font-weight: bold;"><i class="fas fa-edit"></i></a></td>
+                            <td style="width: 36px;"><a href="" style="text-decoration: none;font-weight: bold;"><i class="fas fa-edit"></i></a></td>
                             <td style="width: 36px;height: 49px;"><a href="#" style="/*text-decoration: none;*//*background-color: red;*//*color: rgb(221,16,16);*//*border: 1px solid;*//*border-radius: 5px;*//*width: 12px;*//*height: 20px;*/color: red;font-weight: bold;"></a><a href="#" style="text-decoration: none;font-weight: bold;"><i class="material-icons" style="width: 11;height: 13;color: rgb(255,19,34);">delete</i></a></td>
                         </tr>
                         <tr></tr>

@@ -35,7 +35,7 @@ public class IssueDaoImpl implements IssueDao{
 			Session session = factory.openSession();
 
 			Transaction transaction = session.beginTransaction();
-
+			
 			session.save(issue);
 
 			
@@ -142,7 +142,7 @@ try {
 
 			Transaction transaction = session.beginTransaction();
 
-			allIssue = session.createQuery("from Issue").list();
+			allIssue = session.createQuery("from Issue i  where i.status>0").list();
 
 			
 			

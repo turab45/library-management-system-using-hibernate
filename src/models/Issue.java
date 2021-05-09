@@ -43,12 +43,6 @@ public class Issue {
 	public void setIssuedBy(Integer issuedBy) {
 		this.issuedBy = issuedBy;
 	}
-	public int getStatus() {
-		return status;
-	}
-	public void setStatus(int status) {
-		this.status = status;
-	}
 	public Integer getCreatedBy() {
 		return createdBy;
 	}
@@ -73,7 +67,14 @@ public class Issue {
 	public void setUpdateDate(Date updateDate) {
 		this.updateDate = updateDate;
 	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
 	
-	
-
 }
+	
+	
+	
